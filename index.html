@@ -231,39 +231,16 @@ footer.foot span{color:var(--text)}
         <h3>What this may mean</h3>
         <p id="rReading"></p>
       </div>
-      <div class="block">
-        <h3>Where it may show up in your closings</h3>
-        <ul id="rShows"></ul>
-      </div>
       <div class="action">
         <h3>One action for this week</h3>
         <p id="rAction"></p>
       </div>
       <p class="note" style="text-align:left;margin:4px 0 0">A possible explanation to reflect on, not a diagnosis or a prediction.</p>
 
-      <section class="path" id="path" aria-labelledby="path-h">
-        <p class="eyebrow">Where to go next</p>
-        <h2 id="path-h">Your path in the RealtorOne app</h2>
-        <p class="sub">Open the app and follow these steps, in this order.</p>
-        <h3 class="pl">Start here</h3>
-        <div class="startcard">
-          <p class="badge" id="pFree">Module 1 is free. Start it today.</p>
-          <ol class="crumbs" id="pStartCrumbs"></ol>
-          <p class="lesson" id="pStartLesson"></p>
-          <p class="snote" id="pStartNote" hidden></p>
-        </div>
-        <h3 class="pl">Practice this week</h3>
-        <ul class="pitems" id="pPractice"></ul>
-        <h3 class="pl">Then go deeper</h3>
-        <ul class="pitems" id="pDeeper"></ul>
-      </section>
-
-      <div class="offersum" id="offerSum"></div>
-
       <div class="formcard" id="formcard">
         <div id="formWrap">
-          <h2>Get your result and your path</h2>
-          <p class="sub">Leave your details and we’ll send your result and your path to your email. If you prefer WhatsApp, we’ll message you your result.</p>
+          <h2>Want your full analysis and learning path?</h2>
+          <p class="sub">Enter your details and we’ll send it to you by email / WhatsApp.</p>
           <form id="capture" novalidate>
             <label class="f" for="fName">Your name</label>
             <input class="inp" id="fName" name="name" type="text" autocomplete="name" placeholder="Name" required>
@@ -283,26 +260,10 @@ footer.foot span{color:var(--text)}
           <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#D9A441" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
           <h2 id="doneH">Thank you.</h2>
           <p id="doneMsg"></p>
-          <div class="thanks-path">
-            <p class="k">Your result and your first step</p>
-            <p id="doneResult"></p>
-            <ol class="crumbs" id="doneCrumbs"></ol>
-            <p class="snote" style="margin-top:6px">Module 1 is free. Start it today.</p>
-          </div>
-          <a class="btn" id="appBtn" href="#" target="_blank" rel="noopener">Download the RealtorOne app</a>
+          <a class="btn" id="appBtn" href="#" target="_blank" rel="noopener">Get it on Google Play</a>
           <a class="btn ghost" id="iosBtn" href="#" target="_blank" rel="noopener" hidden>Download on the App Store</a>
           <a class="btn ghost" id="webBtn" href="#" target="_blank" rel="noopener" hidden>Open RealtorOne on the web</a>
           <a class="btn ghost" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Open WhatsApp to message us</a>
-          <section class="offer" id="offerCard" aria-labelledby="offer-h">
-            <h3 id="offer-h">Unlock the full system</h3>
-            <p class="pos">For realtors serious about building a million-dirham commission, through practical work, not theory.</p>
-            <p>The first module is free. Then continue with a subscription to unlock the rest. Paid membership unlocks the full DealFlow CRM, SkillUp courses, scripts and Live Labs.</p>
-            <div class="plans" id="plans"></div>
-            <p class="pay">Pay securely inside the app: Profile → Membership.</p>
-            <a class="btn" id="offerBtn" href="#" target="_blank" rel="noopener" hidden>Claim the audit offer</a>
-            <p class="fine" style="margin-top:14px">Live prices are shown inside the app; store currency can vary by region.</p>
-            <p class="fine">Results depend on the work you put in.</p>
-          </section>
         </div>
         <div style="text-align:center;margin-top:10px"><button class="link" id="retakeBtn" type="button">Retake the audit</button></div>
       </div>
@@ -888,53 +849,6 @@ function crumbs(ol, arr){
   ol.innerHTML = "";
   arr.forEach(function(t){ var li=document.createElement("li"); li.textContent=t; ol.appendChild(li); });
 }
-function money(n){ return CURRENCY + " " + n; }
-function hasVal(v){ return v !== "" && v !== null && v !== undefined; }
-function planHTML(opts){
-  var d = document.createElement("div"); d.className = "plan" + (opts.best ? " best" : "");
-  var n = document.createElement("div"); n.className = "pn"; n.textContent = opts.label; d.appendChild(n);
-  var p = document.createElement("div"); p.className = "pp";
-  if(hasVal(opts.regular)){ var s=document.createElement("s"); s.textContent = money(opts.regular); s.setAttribute("aria-label","Regular price " + money(opts.regular)); p.appendChild(s); }
-  p.appendChild(document.createTextNode(money(opts.offer))); d.appendChild(p);
-  var u = document.createElement("div"); u.className = "pu"; u.textContent = opts.unit; d.appendChild(u);
-  return d;
-}
-function renderPlans(){
-  var box = $("plans"); box.innerHTML = "";
-  box.appendChild(planHTML({label:"3-month plan · Best value", offer:PRICE_3M_OFFER, regular:PRICE_3M_REGULAR, unit:"/ 3 months", best:true}));
-  box.appendChild(planHTML({label:"Monthly plan", offer:PRICE_MONTHLY_OFFER, regular:PRICE_MONTHLY_REGULAR, unit:"/ month", best:false}));
-}
-function renderOfferSum(){
-  var el = $("offerSum"); el.innerHTML = "";
-  var a = document.createElement("p"); a.className = "pos";
-  a.textContent = "For realtors serious about building a million-dirham commission, through practical work, not theory.";
-  var b = document.createElement("p");
-  b.textContent = "Module 1 is free. Then continue with a subscription to unlock the rest: " + money(PRICE_3M_OFFER) + " for 3 months, or " + money(PRICE_MONTHLY_OFFER) + " a month. Pay securely inside the app: Profile → Membership.";
-  var c = document.createElement("p"); c.className = "note"; c.style.textAlign = "left"; c.style.margin = "6px 0 0";
-  c.textContent = "Live prices are shown inside the app. Results depend on the work you put in.";
-  el.appendChild(a); el.appendChild(b); el.appendChild(c);
-}
-function renderPath(key){
-  var pa = DATA.paths[key];
-  crumbs($("pStartCrumbs"), pa.start.crumbs);
-  $("pStartLesson").textContent = pa.start.lesson;
-  var sn = $("pStartNote"); sn.textContent = pa.start.note || ""; sn.hidden = !pa.start.note;
-  var pr = $("pPractice"); pr.innerHTML = "";
-  pa.practice.forEach(function(x){
-    var li = document.createElement("li"); li.className = "pitem";
-    var t = document.createElement("div"); t.className = "t"; t.textContent = x.t;
-    var w = document.createElement("div"); w.className = "w"; w.textContent = x.w;
-    li.appendChild(t); li.appendChild(w); pr.appendChild(li);
-  });
-  var dp = $("pDeeper"); dp.innerHTML = "";
-  pa.deeper.forEach(function(x){
-    var li = document.createElement("li"); li.className = "pitem";
-    var ol = document.createElement("ol"); ol.className = "crumbs"; crumbs(ol, x.crumbs);
-    var t = document.createElement("div"); t.className = "t serif"; t.textContent = x.lesson;
-    li.appendChild(ol); li.appendChild(t); dp.appendChild(li);
-  });
-}
-
 function finish(){
   var sc = score(); result = sc; submitted = false;
   var r = R[sc.top];
@@ -944,10 +858,7 @@ function finish(){
   $("rRunner").innerHTML = "Runner-up: <b></b>";
   $("rRunner").querySelector("b").textContent = NAME[sc.runner].name;
   $("rReading").textContent = r.reading;
-  var ul = $("rShows"); ul.innerHTML = "";
-  r.shows.forEach(function(t){ var li=document.createElement("li"); li.textContent=t; ul.appendChild(li); });
   $("rAction").textContent = r.action;
-  renderPath(sc.top); renderOfferSum();
   var rd = $("radar"); rd.innerHTML = radarSVG(sc.counts, sc.top);
   rd.setAttribute("aria-label", "Pattern chart. " + ORDER.map(function(k){return NAME[k].name+": "+sc.counts[k]+" of "+Q.length}).join(". "));
   $("formWrap").style.display = ""; $("done").style.display = "none";
@@ -1005,12 +916,9 @@ function thanks(payload){
   $("doneH").textContent = first ? "Thank you, " + first + "." : "Thank you.";
   var viaEmail = !!payload.email;
   $("doneMsg").textContent = viaEmail
-    ? "We’ll send your result and your path to your email."
-    : "We’ll message you your result.";
-  $("doneResult").innerHTML = "Your result: <b></b>";
-  $("doneResult").querySelector("b").textContent = payload.pattern;
-  crumbs($("doneCrumbs"), DATA.paths[payload.patternKey].start.crumbs.concat([DATA.paths[payload.patternKey].start.lesson.split(", then")[0]]));
-  var app=$("appBtn"), ios=$("iosBtn"), web=$("webBtn"), wab=$("waBtn"), ob=$("offerBtn");
+    ? "Check your inbox. Your full analysis and path are on the way."
+    : "Your full analysis and path are on the way. We’ll message you on WhatsApp.";
+  var app=$("appBtn"), ios=$("iosBtn"), web=$("webBtn"), wab=$("waBtn");
   if(PLAY_STORE_URL){ app.href = PLAY_STORE_URL; app.hidden = false; } else { app.hidden = true; }
   if(APP_STORE_URL){ ios.href = APP_STORE_URL; ios.hidden = false; } else { ios.hidden = true; }
   if(WEB_URL){ web.href = WEB_URL; web.hidden = false; } else { web.hidden = true; }
@@ -1019,8 +927,6 @@ function thanks(payload){
     var txt = "Hi, I just took the Belief Audit. My result is: " + payload.pattern + ". Please send me my result.";
     wab.href = "https://wa.me/" + waDigits + "?text=" + encodeURIComponent(txt); wab.hidden = false;
   } else { wab.hidden = true; }
-  if(OFFER_URL){ ob.href = OFFER_URL; ob.hidden = false; } else { ob.hidden = true; }
-  renderPlans();
   d.focus({preventScroll:true});
   d.scrollIntoView({block:"start", behavior:"auto"});
 }
