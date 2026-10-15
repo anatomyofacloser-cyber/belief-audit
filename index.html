@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Belief Audit | Anatomy of a Closer</title>
+<meta name="description" content="Diagnose the invisible gap between your beliefs and your closings. A 2-minute self-reflection quiz for Dubai real estate professionals.">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Belief Audit | Anatomy of a Closer">
+<meta property="og:description" content="Diagnose the invisible gap between your beliefs and your closings. 2 minutes.">
+<meta property="og:site_name" content="Anatomy of a Closer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Belief Audit | Anatomy of a Closer">
+<meta name="twitter:description" content="Diagnose the invisible gap between your beliefs and your closings. 2 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;
+  --bg:#0B1220; --bg2:#101A2E; --card:#142038; --card-h:#1A2A48;
+  --line:rgba(242,235,221,.14); --line-s:rgba(242,235,221,.28);
+  --text:#F2EBDD; --muted:#A9B3C4; --amber:#D9A441; --amber-d:#B9852A; --err:#F0A08A;
+  --serif:"Cormorant Garamond",Cambria,Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;min-height:100vh;min-height:100dvh;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(217,164,65,.10),transparent 70%),linear-gradient(180deg,var(--bg),var(--bg2));
+  background-attachment:fixed;-webkit-font-smoothing:antialiased}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:0 22px env(safe-area-inset-bottom)}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0 10px;min-height:56px}
+.brand{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.01em;color:var(--text);display:flex;align-items:center;gap:9px}
+.brand svg{width:20px;height:20px;flex:none}
+.tag{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+main{flex:1;display:flex;flex-direction:column;position:relative}
+.screen{display:none;flex:1;flex-direction:column;padding:6px 0 28px;outline:none}
+.screen.active{display:flex;animation:in .45s cubic-bezier(.2,.7,.2,1) both}
+.screen.back.active{animation-name:inBack}
+@keyframes in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes inBack{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.005em}
+h1{font-size:46px;line-height:1.02}
+h2{font-size:30px;line-height:1.14}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500;margin:0 0 14px}
+.lede{color:var(--muted);font-size:17px;margin:16px 0 0;max-width:34ch}
+.amber{color:var(--amber)}
+em{font-family:var(--serif);font-style:italic;font-size:1.06em}
+
+/* title */
+.hero-art{margin:0 -6px;opacity:.95;flex:1;display:flex;align-items:center;min-height:240px}
+.hero-art svg{width:100%;height:auto;display:block}
+.cta-row{margin-top:auto;padding-top:26px}
+.btn{appearance:none;border:0;width:100%;background:var(--amber);color:#0B1220;font:600 16px/1 var(--sans);padding:18px 22px;border-radius:14px;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;box-shadow:0 8px 26px -10px rgba(217,164,65,.55);text-align:center;text-decoration:none;display:block;min-height:54px}
+.btn:hover{background:#E3B352}
+.btn:active{transform:scale(.985)}
+.btn[disabled]{opacity:.6;cursor:default}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line-s);box-shadow:none}
+.btn.ghost:hover{background:rgba(255,255,255,.04)}
+.note{font-size:13.5px;color:var(--muted);text-align:center;margin:14px 0 0}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:8px}
+.link{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:10px 6px;min-height:44px}
+.link:hover{color:var(--text)}
+
+/* quiz */
+.qhead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 10px;min-height:44px}
+.count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.count b{color:var(--text);font-weight:600}
+.back{background:none;border:0;color:var(--muted);font:500 14px var(--sans);cursor:pointer;padding:10px 6px 10px 0;min-height:44px;display:flex;align-items:center;gap:6px}
+.back:hover{color:var(--text)}
+[hidden]{display:none!important}
+.bar{height:3px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber-d),var(--amber));border-radius:3px;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.moment{font-family:var(--serif);font-size:31px;line-height:1.14;font-weight:500;margin:34px 0 10px}
+.prompt{color:var(--muted);font-size:15px;margin:0 0 22px}
+.answers{display:flex;flex-direction:column;gap:11px;margin:0;padding:0;list-style:none}
+.ans{appearance:none;width:100%;text-align:left;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 14px;font:400 15.5px/1.45 var(--sans);cursor:pointer;display:flex;gap:13px;align-items:flex-start;min-height:60px;transition:background .2s,border-color .2s,transform .15s}
+.ans:hover{background:var(--card-h);border-color:var(--line-s)}
+.ans:active{transform:scale(.99)}
+.ans .l{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line-s);display:grid;place-items:center;font-size:12px;color:var(--muted);font-weight:500;margin-top:1px;transition:all .2s}
+.ans[aria-checked="true"]{border-color:var(--amber);background:rgba(217,164,65,.10)}
+.ans[aria-checked="true"] .l{background:var(--amber);border-color:var(--amber);color:#0B1220}
+
+/* result */
+.radar{margin:6px auto 4px;width:100%;max-width:330px}
+.radar svg{width:100%;height:auto;display:block;overflow:visible}
+.rname{font-size:44px;line-height:1.04;margin:2px 0 10px}
+.rline{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.3;color:var(--text);margin:0 0 16px}
+.runner{font-size:13.5px;color:var(--muted);margin:0 0 22px}
+.runner b{color:var(--text);font-weight:500}
+.block{border-top:1px solid var(--line);padding:20px 0 4px}
+.block h3{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);font-weight:500;margin:0 0 10px}
+.block p{margin:0 0 10px;color:#DCD6C8;font-size:15.5px}
+.block ul{margin:0;padding:0;list-style:none}
+.block li{position:relative;padding-left:20px;margin:0 0 10px;color:#DCD6C8;font-size:15.5px}
+.block li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border:1.5px solid var(--amber);border-radius:50%}
+.action{background:linear-gradient(180deg,rgba(217,164,65,.12),rgba(217,164,65,.04));border:1px solid rgba(217,164,65,.38);border-radius:16px;padding:18px 18px 8px;margin:18px 0 8px}
+.action h3{font-family:var(--sans)}
+.action p{color:var(--text);font-size:16px}
+
+/* form */
+.formcard{margin-top:26px;border-top:1px solid var(--line);padding-top:26px}
+.formcard h2{font-size:27px;margin-bottom:8px}
+.formcard .sub{color:var(--muted);font-size:15px;margin:0 0 18px}
+label.f{display:block;font-size:13px;color:var(--muted);margin:0 0 6px;font-weight:500}
+.inp{width:100%;background:var(--card);color:var(--text);border:1px solid var(--line-s);border-radius:12px;padding:15px 14px;font:400 16px var(--sans);min-height:52px;margin-bottom:14px}
+.inp::placeholder{color:#6F7B90}
+.inp:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+.inp.bad{border-color:var(--err)}
+.hint{font-size:12.5px;color:var(--muted);margin:-6px 0 14px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--muted);margin:6px 0 18px;line-height:1.45;cursor:pointer}
+.consent input{flex:none;width:22px;height:22px;margin:0;accent-color:var(--amber);cursor:pointer}
+.err{color:var(--err);font-size:13.5px;margin:-4px 0 14px;min-height:0}
+.err:empty{display:none}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{display:none;text-align:left}
+.done h2{margin-bottom:10px}
+.done p{color:var(--muted);margin:0 0 20px}
+.done .btn{margin-bottom:12px}
+.tick{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--amber);display:grid;place-items:center;margin-bottom:16px}
+.tick svg{width:22px;height:22px}
+footer.foot{padding:18px 0 22px;text-align:center;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:6px}
+footer.foot span{color:var(--text)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:360px){h1{font-size:40px}.moment{font-size:27px}.rname{font-size:38px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* path + offer */
+.path{border-top:1px solid var(--line);margin-top:24px;padding-top:24px}
+.path h2{font-size:28px;margin:0 0 6px}
+.path .sub{color:var(--muted);font-size:15px;margin:0 0 4px}
+.pl{font:500 12px var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin:22px 0 10px}
+.startcard{background:var(--card);border:1px solid rgba(217,164,65,.5);border-radius:16px;padding:16px 16px 16px}
+.badge{display:inline-block;background:rgba(217,164,65,.16);color:var(--amber);font-size:13px;font-weight:600;padding:5px 11px;border-radius:999px;margin:0 0 12px}
+.crumbs{list-style:none;margin:0 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:2px 6px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.crumbs li::after{content:"→";margin-left:6px;color:var(--amber)}
+.crumbs li:last-child::after{content:none}
+.crumbs li:last-child{color:var(--text);font-weight:500}
+.lesson{font-family:var(--serif);font-size:21px;line-height:1.25;margin:0;color:var(--text)}
+.snote{font-size:13px;color:var(--muted);margin:10px 0 0}
+.pitems{list-style:none;margin:0;padding:0}
+.pitem{padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
+.pitem .t{font-size:15px;color:var(--text);line-height:1.4}
+.pitem .w{font-size:13px;color:var(--muted);margin-top:3px}
+.pitem .crumbs{margin:0 0 4px;font-size:12.5px}
+.pitem .t.serif{font-family:var(--serif);font-size:18px;line-height:1.25}
+.offersum{margin-top:22px;border:1px solid var(--line-s);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}
+.offersum p{margin:0 0 8px;font-size:15px;color:#DCD6C8}
+.offersum p:last-child{margin:0}
+.offersum .pos{font-family:var(--serif);font-size:19px;line-height:1.3;color:var(--text)}
+.offer{margin-top:24px;border:1px solid var(--line-s);border-radius:18px;padding:20px 16px;background:linear-gradient(180deg,rgba(217,164,65,.07),rgba(255,255,255,.02))}
+.offer h3{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--text);margin:0 0 10px;letter-spacing:0;text-transform:none}
+.offer p{color:#DCD6C8;font-size:15px;margin:0 0 12px}
+.offer .pos{font-family:var(--serif);font-size:19px;line-height:1.3;color:var(--text)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 14px}
+.plan{border:1px solid var(--line);border-radius:14px;padding:13px 12px;background:var(--card);min-width:0}
+.plan.best{border-color:var(--amber);background:rgba(217,164,65,.09)}
+.pn{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--amber);font-weight:600;line-height:1.35}
+.pp{font-family:var(--serif);font-variant-numeric:lining-nums;font-size:28px;font-weight:600;line-height:1.1;margin-top:8px;color:var(--text)}
+.pp s{display:block;font-variant-numeric:lining-nums;font-size:17px;font-weight:500;color:var(--muted);text-decoration-thickness:1.5px}
+.pu{font-size:13px;color:var(--muted);margin-top:2px}
+.offer .pay{font-weight:500;color:var(--text)}
+.offer .fine{font-size:12.5px;color:var(--muted);margin:0 0 6px}
+.offer .btn{margin-top:14px}
+.thanks-path{margin:0 0 20px;padding:14px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.thanks-path .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin:0 0 6px;font-weight:500}
+.thanks-path .crumbs{margin:6px 0 0}
+.done .thanks-path p{margin:0;color:var(--text)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#D9A441" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 4.2l2.1 7.8L12 19.8 9.9 12z" fill="rgba(217,164,65,.25)"/><circle cx="12" cy="12" r="1.1" fill="#D9A441" stroke="none"/></svg>
+      Anatomy of a Closer
+    </div>
+    <div class="tag">A RealtorOne project</div>
+  </header>
+
+  <main id="main">
+    <!-- TITLE -->
+    <section class="screen active" id="s-title" tabindex="-1" aria-labelledby="t-h">
+      <p class="eyebrow">Self-audit for realtors</p>
+      <h1 id="t-h">The Belief <span class="amber">Audit</span></h1>
+      <p class="lede">Diagnose the invisible gap between your beliefs and your closings. 2 minutes.</p>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 250" fill="none">
+          <defs>
+            <linearGradient id="gw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A441" stop-opacity=".16"/><stop offset="1" stop-color="#D9A441" stop-opacity="0"/></linearGradient>
+          </defs>
+          <path d="M150 92 L172 52 L192 76 L206 62 L226 92 Z" fill="rgba(242,235,221,.08)" stroke="#F2EBDD" stroke-opacity=".7" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M20 92 H340" stroke="#D9A441" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+          <path d="M150 92 L118 128 L132 176 L172 222 L222 206 L254 158 L240 118 L226 92 Z" fill="url(#gw)" stroke="#F2EBDD" stroke-opacity=".32" stroke-width="1" stroke-linejoin="round"/>
+          <path d="M118 128 L196 140 L254 158 M132 176 L196 140 L222 206 M196 140 L172 222 M196 140 L150 92 M196 140 L240 118" stroke="#F2EBDD" stroke-opacity=".12" stroke-width=".8"/>
+          <circle cx="196" cy="140" r="64" stroke="#D9A441" stroke-opacity=".22" stroke-width=".8"/>
+          <circle cx="196" cy="140" r="104" stroke="#D9A441" stroke-opacity=".12" stroke-width=".8"/>
+          <circle cx="196" cy="140" r="2.4" fill="#D9A441"/>
+          <text x="18" y="82" fill="#A9B3C4" font-family="Inter,system-ui,sans-serif" font-size="9.5" letter-spacing="1.2">WHAT YOU SEE</text>
+          <text x="18" y="108" fill="#D9A441" font-family="Inter,system-ui,sans-serif" font-size="9.5" letter-spacing="1.2">WHAT CREATED IT</text>
+        </svg>
+      </div>
+      <div class="cta-row">
+        <button class="btn" id="startBtn" type="button">Start</button>
+        <p class="note">A self-reflection tool, not a diagnosis.</p>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="screen" id="s-quiz" tabindex="-1" aria-labelledby="q-h">
+      <div class="qhead">
+        <button class="back" id="backBtn" type="button" aria-label="Go back to the previous question"><span aria-hidden="true">←</span> Back</button>
+        <div class="count" id="qCount" aria-live="polite"></div>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="bar"><i id="barFill"></i></div>
+      <h2 class="moment" id="q-h"></h2>
+      <p class="prompt" id="qPrompt"></p>
+      <ul class="answers" id="answers" role="radiogroup" aria-labelledby="q-h"></ul>
+    </section>
+
+    <!-- RESULT -->
+    <section class="screen" id="s-result" tabindex="-1" aria-labelledby="r-h">
+      <p class="eyebrow">Your dominant pattern</p>
+      <div class="radar" id="radar" role="img" aria-label=""></div>
+      <h2 class="rname amber" id="r-h"></h2>
+      <p class="rline" id="rLine"></p>
+      <p class="runner" id="rRunner"></p>
+
+      <div class="block">
+        <h3>What this may mean</h3>
+        <p id="rReading"></p>
+      </div>
+      <div class="block">
+        <h3>Where it may show up in your closings</h3>
+        <ul id="rShows"></ul>
+      </div>
+      <div class="action">
+        <h3>One action for this week</h3>
+        <p id="rAction"></p>
+      </div>
+      <p class="note" style="text-align:left;margin:4px 0 0">A possible explanation to reflect on, not a diagnosis or a prediction.</p>
+
+      <section class="path" id="path" aria-labelledby="path-h">
+        <p class="eyebrow">Where to go next</p>
+        <h2 id="path-h">Your path in the RealtorOne app</h2>
+        <p class="sub">Open the app and follow these steps, in this order.</p>
+        <h3 class="pl">Start here</h3>
+        <div class="startcard">
+          <p class="badge" id="pFree">Module 1 is free. Start it today.</p>
+          <ol class="crumbs" id="pStartCrumbs"></ol>
+          <p class="lesson" id="pStartLesson"></p>
+          <p class="snote" id="pStartNote" hidden></p>
+        </div>
+        <h3 class="pl">Practice this week</h3>
+        <ul class="pitems" id="pPractice"></ul>
+        <h3 class="pl">Then go deeper</h3>
+        <ul class="pitems" id="pDeeper"></ul>
+      </section>
+
+      <div class="offersum" id="offerSum"></div>
+
+      <div class="formcard" id="formcard">
+        <div id="formWrap">
+          <h2>Get your result and your path</h2>
+          <p class="sub">Leave your details and we’ll send your result and your path to your email. If you prefer WhatsApp, we’ll message you your result.</p>
+          <form id="capture" novalidate>
+            <label class="f" for="fName">Your name</label>
+            <input class="inp" id="fName" name="name" type="text" autocomplete="name" placeholder="Name" required>
+            <label class="f" for="fWa">WhatsApp number</label>
+            <input class="inp" id="fWa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971 50 123 4567">
+            <label class="f" for="fEmail">Email</label>
+            <input class="inp" id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+            <p class="hint">WhatsApp or email, at least one. Email gets your result and your path.</p>
+            <div class="hp" aria-hidden="true"><label>Leave empty <input id="fHp" type="text" tabindex="-1" autocomplete="off"></label></div>
+            <label class="consent"><input type="checkbox" id="fConsent"><span>I agree to be contacted about my result and RealtorOne.</span></label>
+            <div class="err" id="fErr" role="alert"></div>
+            <button class="btn" id="sendBtn" type="submit">Send me my result and path</button>
+          </form>
+        </div>
+        <div class="done" id="done" tabindex="-1" aria-live="polite">
+          <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#D9A441" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2 id="doneH">Thank you.</h2>
+          <p id="doneMsg"></p>
+          <div class="thanks-path">
+            <p class="k">Your result and your first step</p>
+            <p id="doneResult"></p>
+            <ol class="crumbs" id="doneCrumbs"></ol>
+            <p class="snote" style="margin-top:6px">Module 1 is free. Start it today.</p>
+          </div>
+          <a class="btn" id="appBtn" href="#" target="_blank" rel="noopener">Download the RealtorOne app</a>
+          <a class="btn ghost" id="iosBtn" href="#" target="_blank" rel="noopener" hidden>Download on the App Store</a>
+          <a class="btn ghost" id="webBtn" href="#" target="_blank" rel="noopener" hidden>Open RealtorOne on the web</a>
+          <a class="btn ghost" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Open WhatsApp to message us</a>
+          <section class="offer" id="offerCard" aria-labelledby="offer-h">
+            <h3 id="offer-h">Unlock the full system</h3>
+            <p class="pos">For realtors serious about building a million-dirham commission, through practical work, not theory.</p>
+            <p>The first module is free. Then continue with a subscription to unlock the rest. Paid membership unlocks the full DealFlow CRM, SkillUp courses, scripts and Live Labs.</p>
+            <div class="plans" id="plans"></div>
+            <p class="pay">Pay securely inside the app: Profile → Membership.</p>
+            <a class="btn" id="offerBtn" href="#" target="_blank" rel="noopener" hidden>Claim the audit offer</a>
+            <p class="fine" style="margin-top:14px">Live prices are shown inside the app; store currency can vary by region.</p>
+            <p class="fine">Results depend on the work you put in.</p>
+          </section>
+        </div>
+        <div style="text-align:center;margin-top:10px"><button class="link" id="retakeBtn" type="button">Retake the audit</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot"><span>Anatomy of a Closer</span> · A RealtorOne project</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ===== CONFIG ===== */
+var SUBMIT_ENDPOINT = "";   // Google Apps Script web app URL. Empty = save to localStorage only (preview mode).
+var PLAY_STORE_URL  = "https://play.google.com/store/apps/details?id=com.realtorone.app";
+var APP_STORE_URL   = "";   // optional, hidden when empty
+var WEB_URL         = "";   // optional, hidden when empty
+
+/* ===== OFFER (the owner must confirm these before publishing) =====
+   Currency and numbers below come from the in-app pricing screen:
+   3-month plan AED 995 / 3 months, monthly plan AED 392 / month.
+   Live prices are shown inside the app and store currency can vary by region, so
+   confirm the numbers match the app before you publish.
+   The REGULAR prices are optional. Leave them "" to hide them. Fill them in only if
+   they are real and shown in the app: they are then displayed struck through. */
+var CURRENCY             = "AED";
+var PRICE_MONTHLY_REGULAR = "";    // optional, e.g. 450. Hidden when empty
+var PRICE_MONTHLY_OFFER   = 392;
+var PRICE_3M_REGULAR      = "";    // optional, e.g. 1050. Hidden when empty
+var PRICE_3M_OFFER        = 995;
+var OFFER_URL            = "";    // optional "Claim the audit offer" button. Hidden when empty. Payment happens in the app.
+var WHATSAPP_NUMBER      = "";    // digits with country code, e.g. 971501234567. WhatsApp link hidden when empty
+/* ================== */
+
+var DATA = {
+ "patterns": [
+  {
+   "key": "B",
+   "name": "Belief",
+   "short": "Belief"
+  },
+  {
+   "key": "I",
+   "name": "Identity",
+   "short": "Identity"
+  },
+  {
+   "key": "S",
+   "name": "Subconscious pattern",
+   "short": "Pattern"
+  },
+  {
+   "key": "E",
+   "name": "Emotional reaction",
+   "short": "Emotion"
+  },
+  {
+   "key": "H",
+   "name": "Invisible habit",
+   "short": "Habit"
+  }
+ ],
+ "questions": [
+  {
+   "moment": "A client says, “I’ll wait.”",
+   "prompt": "What are you most likely to think or do?",
+   "answers": [
+    {
+     "k": "E",
+     "t": "My stomach drops. I start pushing urgency so they don’t slip away."
+    },
+    {
+     "k": "B",
+     "t": "I hear a polite no. Buyers who say “I’ll wait” rarely come back."
+    },
+    {
+     "k": "S",
+     "t": "“Of course, no problem” is out of my mouth before I’ve thought about it."
+    },
+    {
+     "k": "I",
+     "t": "I step back. I’m the advisor who doesn’t push, and I don’t want to be “that agent”."
+    }
+   ]
+  },
+  {
+   "moment": "A client opens with cashback or a discount, before asking a single question about the property.",
+   "prompt": "What happens first?",
+   "answers": [
+    {
+     "k": "H",
+     "t": "I rarely ask discovery questions on first calls. Skipping them has become my routine."
+    },
+    {
+     "k": "I",
+     "t": "I’m the agent who gets clients the best deal, so I start working out how low I can go."
+    },
+    {
+     "k": "B",
+     "t": "I assume this is how the deal gets won: clients only buy if I give them something extra."
+    },
+    {
+     "k": "E",
+     "t": "I get defensive straight away and worry they’ll go to another agent."
+    }
+   ]
+  },
+  {
+   "moment": "It’s the middle of a slow month.",
+   "prompt": "What does your week look like?",
+   "answers": [
+    {
+     "k": "S",
+     "t": "I end up refreshing the CRM and scrolling, checking everything except calling someone. I never decide to."
+    },
+    {
+     "k": "H",
+     "t": "Looking back, I made a few fewer calls and follow-ups each day, and it added up."
+    },
+    {
+     "k": "B",
+     "t": "I tell myself the market is slow, and that my income is mostly decided by it."
+    },
+    {
+     "k": "E",
+     "t": "Anxiety builds. I compare myself with others and chase any lead in a panic."
+    }
+   ]
+  },
+  {
+   "moment": "A buyer loved the viewing, then went quiet.",
+   "prompt": "What do you do next?",
+   "answers": [
+    {
+     "k": "I",
+     "t": "Nothing. I’m the professional who doesn’t pester people."
+    },
+    {
+     "k": "H",
+     "t": "They go into my list, and I may not look at them again for weeks. I have no set rhythm for follow-ups."
+    },
+    {
+     "k": "B",
+     "t": "I decide they’ve lost interest. Silence means no."
+    },
+    {
+     "k": "S",
+     "t": "I send one “just checking in” and leave it there. It’s a habit I’ve never questioned."
+    }
+   ]
+  },
+  {
+   "moment": "A colleague closes a big deal.",
+   "prompt": "What’s your first reaction?",
+   "answers": [
+    {
+     "k": "S",
+     "t": "I quietly find a reason it doesn’t count: lucky lead, easy buyer."
+    },
+    {
+     "k": "I",
+     "t": "That feels like a different level from where I am right now."
+    },
+    {
+     "k": "H",
+     "t": "I promise myself to work harder this week, but by Tuesday it’s the same routine."
+    },
+    {
+     "k": "E",
+     "t": "A mix of envy and urgency. I want to prove myself right now."
+    }
+   ]
+  },
+  {
+   "moment": "You’re about to quote a price.",
+   "prompt": "What do you notice?",
+   "answers": [
+    {
+     "k": "E",
+     "t": "I fear their reaction, so I rush through the number and move on."
+    },
+    {
+     "k": "S",
+     "t": "My voice rises at the end and I add “but we can discuss it”, without noticing."
+    },
+    {
+     "k": "B",
+     "t": "I believe a high number scares people, so I soften it before I say it."
+    },
+    {
+     "k": "I",
+     "t": "I don’t want to be seen as the expensive agent, so I play it down."
+    }
+   ]
+  },
+  {
+   "moment": "There’s a follow-up you’ve been postponing for days.",
+   "prompt": "Why does it stay on the list?",
+   "answers": [
+    {
+     "k": "H",
+     "t": "I do the easy tasks first, and this one is always next week."
+    },
+    {
+     "k": "E",
+     "t": "There’s a small flinch. I’d rather not hear a “no”."
+    },
+    {
+     "k": "I",
+     "t": "I see myself as someone who lets clients come back when they’re ready."
+    },
+    {
+     "k": "B",
+     "t": "I believe messaging again makes me look needy."
+    }
+   ]
+  },
+  {
+   "moment": "You lose a deal, and the client gives you feedback.",
+   "prompt": "What do you do with it?",
+   "answers": [
+    {
+     "k": "B",
+     "t": "I conclude the client was never serious, so it wasn’t winnable anyway."
+    },
+    {
+     "k": "S",
+     "t": "I move on within minutes and never review what happened. I always do."
+    },
+    {
+     "k": "I",
+     "t": "I take it as proof of who I am. Maybe I’m not a top closer yet."
+    },
+    {
+     "k": "H",
+     "t": "I don’t write down what I’d change, so the next deal gets the same approach."
+    }
+   ]
+  }
+ ],
+ "results": {
+  "B": {
+   "name": "Belief",
+   "line": "You may read the market through what you already believe.",
+   "reading": "Your first read of a situation may come from a belief you already hold, before the facts arrive. A quiet lead becomes “not interested”. A slow month becomes “the market”. Beliefs can feel like observations, which is why they’re hard to spot.",
+   "shows": [
+    "A client says “I’ll wait” and you may hear a no.",
+    "You may offer a discount before you’ve asked what the client actually needs."
+   ],
+   "action": "Before your next “I’ll wait” or cashback conversation, write down the sentence you’re telling yourself. Then ask the client: “What would help you feel confident enough to move forward?” and stop talking."
+  },
+  "I": {
+   "name": "Identity",
+   "line": "You may act according to who you believe you are in this market.",
+   "reading": "Behaviour tends to follow the picture we hold of ourselves: the order-taker, the nice agent, the one who never pushes. If that picture is smaller than the role you want, your actions may quietly stay inside it.",
+   "shows": [
+    "You may send a long list of listings because that’s what an order-taker does, instead of advising.",
+    "You may soften a price or hold back a follow-up to protect an image of yourself."
+   ],
+   "action": "Pick one client who asks “send me some options” this week. Ask what matters most to them before sending anything, then shortlist only the options that match."
+  },
+  "S": {
+   "name": "Subconscious pattern",
+   "line": "Some of your sales reflexes may be running on autopilot.",
+   "reading": "The same opener, the same reply to an objection, the same “just checking in”. Repeated behaviours can run without conscious choice, so they never feel like decisions. That makes them easy to miss and powerful.",
+   "shows": [
+    "You may say “no problem” to an objection before you’ve thought about it.",
+    "You may send one follow-up and let the contact go quiet, without ever choosing to."
+   ],
+   "action": "Over your next three client calls or messages, write down the first sentence you say when an objection appears. Then pick one question to ask in its place."
+  },
+  "E": {
+   "name": "Emotional reaction",
+   "line": "Fear, urgency or the need for approval may be steering your decisions in the moment.",
+   "reading": "A tight chest can turn into a discount, a rushed number or a pushy message before you’ve chosen anything. Emotions in the moment may be making some sales decisions for you.",
+   "shows": [
+    "You may push urgency the second a client hesitates.",
+    "You may rush past the price, or drop it, to get away from the discomfort."
+   ],
+   "action": "The next time a client asks for cashback or goes quiet, pause for one minute before replying. Write the feeling in one word, then reply to the client."
+  },
+  "H": {
+   "name": "Invisible habit",
+   "line": "Small repeated behaviours may be shaping your results more than any big decision.",
+   "reading": "How many follow-ups you send, whether you review a lost deal, which task you do first: small routines repeated daily can add up to a visible result. Over weeks, the habit becomes the outcome.",
+   "shows": [
+    "A lead list that goes untouched, so some slow weeks may begin with a few skipped calls.",
+    "A lost deal that’s never reviewed, so the next one gets the same approach."
+   ],
+   "action": "Pick one habit tied to a real moment: after every viewing, send a Day 3 follow-up that adds something true and new. Put three of them in your calendar this week."
+  }
+ },
+ "paths": {
+  "B": {
+   "start": {
+    "crumbs": [
+     "Skill Up",
+     "Courses",
+     "Million Dirham Beliefs",
+     "Day 1"
+    ],
+    "lesson": "Chapter 1: The Blueprint of Success, then the Million Dirham Beliefs Practice Workbook",
+    "note": ""
+   },
+   "practice": [
+    {
+     "t": "Download Your Million Dirham Beliefs Practice Workbook (PDF)",
+     "w": "Million Dirham Beliefs → Day 1"
+    },
+    {
+     "t": "(Visualization) Million-Dollar Agent Identity & Manifesting Lucrative Deals",
+     "w": "Million Dirham Beliefs → Day 2"
+    }
+   ],
+   "deeper": [
+    {
+     "crumbs": [
+      "Million Dirham Beliefs",
+      "Day 3"
+     ],
+     "lesson": "Chapter 3: Breaking the Habit of the Old – Letting Go of Limiting Beliefs to Become a Top Realtor"
+    },
+    {
+     "crumbs": [
+      "Million Dirham Beliefs",
+      "Day 4"
+     ],
+     "lesson": "Chapter 4: Creating a New Reality"
+    }
+   ]
+  },
+  "I": {
+   "start": {
+    "crumbs": [
+     "Skill Up",
+     "Courses",
+     "Cold Calling Mastery Program",
+     "Module 1 – Identity & Mindset for Cold Calling"
+    ],
+    "lesson": "Caller Identity Reset - The Mental Operating System for Cold Calling",
+    "note": ""
+   },
+   "practice": [
+    {
+     "t": "Download Your Million Dirham Beliefs Practice Workbook (PDF)",
+     "w": "Million Dirham Beliefs → Day 1"
+    },
+    {
+     "t": "(Visualization) Million-Dollar Agent Identity & Manifesting Lucrative Deals",
+     "w": "Million Dirham Beliefs → Day 2"
+    }
+   ],
+   "deeper": [
+    {
+     "crumbs": [
+      "Million Dirham Beliefs",
+      "Day 9"
+     ],
+     "lesson": "Create & Install Your Million-Dollar Realtor Identity: Top Realtor’s Tone to Close Big Deals, and 4 Types of Clients Realtors Must Know"
+    },
+    {
+     "crumbs": [
+      "Million Dirham Beliefs",
+      "Extra Bonuses"
+     ],
+     "lesson": "Realtor One: The High-Ticket Sales Blueprint (e-Book)"
+    }
+   ]
+  },
+  "S": {
+   "start": {
+    "crumbs": [
+     "Skill Up",
+     "Courses",
+     "Invisible Influence",
+     "Introduction"
+    ],
+    "lesson": "Welcome to Invisible Influence – Your 7-Module Realtor Advantage, with the Workbook",
+    "note": ""
+   },
+   "practice": [
+    {
+     "t": "Invisible Influence Workbook (PDF)",
+     "w": "Invisible Influence → Introduction"
+    },
+    {
+     "t": "Part 3 (Strategic Questioning (ISA Method)) PDF",
+     "w": "Cold Calling Mastery Program → Module 2"
+    },
+    {
+     "t": "Part 5 (Objection Handling) PDF",
+     "w": "Cold Calling Mastery Program → Module 2"
+    }
+   ],
+   "deeper": [
+    {
+     "crumbs": [
+      "Invisible Influence",
+      "Module 3"
+     ],
+     "lesson": "How to Build Deep Trust in Minutes Using Subconscious Triggers"
+    },
+    {
+     "crumbs": [
+      "Invisible Influence",
+      "Module 5"
+     ],
+     "lesson": "How to Talk So Your Clients Say Yes Before They Realize They Did"
+    }
+   ]
+  },
+  "E": {
+   "start": {
+    "crumbs": [
+     "Skill Up",
+     "Courses",
+     "Million Dirham Beliefs",
+     "Day 5"
+    ],
+    "lesson": "Chapter 5: The Power of your inner Dialogue",
+    "note": ""
+   },
+   "practice": [
+    {
+     "t": "Part 5 (Objection Handling) PDF",
+     "w": "Cold Calling Mastery Program → Module 2"
+    },
+    {
+     "t": "How to recover when calls go wrong (PDF)",
+     "w": "Cold Calling Mastery Program → Module 5"
+    },
+    {
+     "t": "Download Your Million Dirham Beliefs Practice Workbook (PDF)",
+     "w": "Million Dirham Beliefs → Day 1"
+    }
+   ],
+   "deeper": [
+    {
+     "crumbs": [
+      "Million Dirham Beliefs",
+      "Day 6"
+     ],
+     "lesson": "Chapter 6: The Power of Visualization"
+    },
+    {
+     "crumbs": [
+      "Cold Calling Mastery Program",
+      "Module 3 – Tonality & Call Presence"
+     ],
+     "lesson": "Tonality Practice & Real Call Application"
+    }
+   ]
+  },
+  "H": {
+   "start": {
+    "crumbs": [
+     "Skill Up",
+     "Courses",
+     "Cold Calling Mastery Program",
+     "Module 4 – Weekly Ritual Practice"
+    ],
+    "lesson": "The 10-Minute Weekly Ritual (PDF)",
+    "note": "Module 1 of this course (Caller Identity Reset) is where the course begins. The Weekly Ritual is Module 4."
+   },
+   "practice": [
+    {
+     "t": "The 10-Minute Weekly Ritual (PDF): do it once this week",
+     "w": "Cold Calling Mastery Program → Module 4"
+    },
+    {
+     "t": "Bonus – The Follow-up Fortune (PDF)",
+     "w": "Cold Calling Mastery Program → Module 5"
+    }
+   ],
+   "deeper": [
+    {
+     "crumbs": [
+      "Cold Calling Mastery Program",
+      "Module 2"
+     ],
+     "lesson": "Part 4 (Tonality & Daily Execution)"
+    },
+    {
+     "crumbs": [
+      "Cold Calling Mastery Program",
+      "Module 5"
+     ],
+     "lesson": "How to recover when calls go wrong"
+    }
+   ]
+  }
+ }
+};
+var P = DATA.patterns, Q = DATA.questions, R = DATA.results;
+var ORDER = P.map(function(p){return p.key});
+var NAME = {}; P.forEach(function(p){NAME[p.key]=p});
+
+var $ = function(id){return document.getElementById(id)};
+var screens = {title:$("s-title"),quiz:$("s-quiz"),result:$("s-result")};
+var idx = 0, picks = [], result = null, submitted = false;
+
+function show(name, back){
+  Object.keys(screens).forEach(function(k){
+    var s = screens[k]; s.classList.remove("active","back");
+  });
+  var el = screens[name];
+  if(back) el.classList.add("back");
+  el.classList.add("active");
+  window.scrollTo(0,0);
+  var h = el.querySelector("h1,h2");
+  el.focus({preventScroll:true});
+}
+
+function renderQ(back){
+  var q = Q[idx], n = Q.length;
+  $("q-h").textContent = q.moment;
+  $("qPrompt").textContent = q.prompt;
+  $("qCount").innerHTML = "<b>"+(idx+1)+"</b> of "+n;
+  $("qCount").setAttribute("aria-label","Question "+(idx+1)+" of "+n);
+  $("barFill").style.width = ((idx)/n*100)+"%";
+  var bar = $("bar"); bar.setAttribute("aria-valuenow", idx);
+  requestAnimationFrame(function(){ $("barFill").style.width = ((idx+1)/n*100)+"%"; });
+  $("backBtn").style.visibility = idx===0 ? "hidden" : "visible";
+  var ul = $("answers"); ul.innerHTML = "";
+  q.answers.forEach(function(a,i){
+    var li = document.createElement("li");
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "ans"; b.setAttribute("role","radio");
+    var chosen = picks[idx]===i;
+    b.setAttribute("aria-checked", chosen ? "true":"false");
+    b.innerHTML = '<span class="l" aria-hidden="true">'+"ABCD".charAt(i)+'</span><span></span>';
+    b.lastChild.textContent = a.t;
+    b.addEventListener("click", function(){ choose(i); });
+    li.appendChild(b); ul.appendChild(li);
+  });
+  show("quiz", back);
+}
+
+var lock = false;
+function choose(i){
+  if(lock) return; lock = true;
+  picks[idx] = i;
+  var btns = $("answers").querySelectorAll(".ans");
+  for(var j=0;j<btns.length;j++) btns[j].setAttribute("aria-checked", j===i ? "true":"false");
+  setTimeout(function(){
+    lock = false;
+    if(idx < Q.length-1){ idx++; renderQ(false); }
+    else { finish(); }
+  }, 380);
+}
+
+function score(){
+  var c = {}; ORDER.forEach(function(k){c[k]=0});
+  picks.forEach(function(p,qi){ c[Q[qi].answers[p].k]++; });
+  var sorted = ORDER.slice().sort(function(a,b){
+    return c[b]-c[a] || ORDER.indexOf(a)-ORDER.indexOf(b);   // tie: first by order
+  });
+  return {counts:c, top:sorted[0], runner:sorted[1]};
+}
+
+function radarSVG(c, top){
+  var cx=150, cy=132, r=88, n=ORDER.length, max=Math.max(4, c[top]);
+  function pt(i,f){ var a=-Math.PI/2 + i*2*Math.PI/n; return [cx+Math.cos(a)*r*f, cy+Math.sin(a)*r*f]; }
+  function poly(f){ return ORDER.map(function(_,i){return pt(i,f).join(",")}).join(" "); }
+  var s = '<svg viewBox="0 0 300 268" aria-hidden="true" focusable="false">';
+  [0.25,0.5,0.75,1].forEach(function(f){ s += '<polygon points="'+poly(f)+'" fill="none" stroke="#F2EBDD" stroke-opacity="'+(f===1?.26:.12)+'" stroke-width="1"/>'; });
+  ORDER.forEach(function(_,i){ var p=pt(i,1); s += '<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="#F2EBDD" stroke-opacity=".12"/>'; });
+  var vals = ORDER.map(function(k,i){ return pt(i, Math.max(c[k],0)/max).join(","); }).join(" ");
+  s += '<polygon points="'+vals+'" fill="rgba(217,164,65,.22)" stroke="#D9A441" stroke-width="1.6" stroke-linejoin="round"/>';
+  ORDER.forEach(function(k,i){ var p=pt(i, c[k]/max); s += '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(k===top?4.2:2.8)+'" fill="'+(k===top?"#D9A441":"#F2EBDD")+'"/>'; });
+  ORDER.forEach(function(k,i){
+    var p = pt(i,1.2), a=-Math.PI/2 + i*2*Math.PI/n, cos=Math.cos(a);
+    var anchor = Math.abs(cos)<0.2 ? "middle" : (cos>0 ? "start":"end");
+    var dy = i===0 ? -6 : (Math.sin(a)>0.5 ? 14 : 4);
+    var x = p[0] + (anchor==="start"? -4 : anchor==="end"? 4 : 0);
+    s += '<text x="'+x+'" y="'+(p[1]+dy)+'" text-anchor="'+anchor+'" font-family="Inter,system-ui,sans-serif" font-size="11.5" font-weight="'+(k===top?600:400)+'" fill="'+(k===top?"#D9A441":"#A9B3C4")+'">'+NAME[k].short+'</text>';
+  });
+  return s + '</svg>';
+}
+
+
+function crumbs(ol, arr){
+  ol.innerHTML = "";
+  arr.forEach(function(t){ var li=document.createElement("li"); li.textContent=t; ol.appendChild(li); });
+}
+function money(n){ return CURRENCY + " " + n; }
+function hasVal(v){ return v !== "" && v !== null && v !== undefined; }
+function planHTML(opts){
+  var d = document.createElement("div"); d.className = "plan" + (opts.best ? " best" : "");
+  var n = document.createElement("div"); n.className = "pn"; n.textContent = opts.label; d.appendChild(n);
+  var p = document.createElement("div"); p.className = "pp";
+  if(hasVal(opts.regular)){ var s=document.createElement("s"); s.textContent = money(opts.regular); s.setAttribute("aria-label","Regular price " + money(opts.regular)); p.appendChild(s); }
+  p.appendChild(document.createTextNode(money(opts.offer))); d.appendChild(p);
+  var u = document.createElement("div"); u.className = "pu"; u.textContent = opts.unit; d.appendChild(u);
+  return d;
+}
+function renderPlans(){
+  var box = $("plans"); box.innerHTML = "";
+  box.appendChild(planHTML({label:"3-month plan · Best value", offer:PRICE_3M_OFFER, regular:PRICE_3M_REGULAR, unit:"/ 3 months", best:true}));
+  box.appendChild(planHTML({label:"Monthly plan", offer:PRICE_MONTHLY_OFFER, regular:PRICE_MONTHLY_REGULAR, unit:"/ month", best:false}));
+}
+function renderOfferSum(){
+  var el = $("offerSum"); el.innerHTML = "";
+  var a = document.createElement("p"); a.className = "pos";
+  a.textContent = "For realtors serious about building a million-dirham commission, through practical work, not theory.";
+  var b = document.createElement("p");
+  b.textContent = "Module 1 is free. Then continue with a subscription to unlock the rest: " + money(PRICE_3M_OFFER) + " for 3 months, or " + money(PRICE_MONTHLY_OFFER) + " a month. Pay securely inside the app: Profile → Membership.";
+  var c = document.createElement("p"); c.className = "note"; c.style.textAlign = "left"; c.style.margin = "6px 0 0";
+  c.textContent = "Live prices are shown inside the app. Results depend on the work you put in.";
+  el.appendChild(a); el.appendChild(b); el.appendChild(c);
+}
+function renderPath(key){
+  var pa = DATA.paths[key];
+  crumbs($("pStartCrumbs"), pa.start.crumbs);
+  $("pStartLesson").textContent = pa.start.lesson;
+  var sn = $("pStartNote"); sn.textContent = pa.start.note || ""; sn.hidden = !pa.start.note;
+  var pr = $("pPractice"); pr.innerHTML = "";
+  pa.practice.forEach(function(x){
+    var li = document.createElement("li"); li.className = "pitem";
+    var t = document.createElement("div"); t.className = "t"; t.textContent = x.t;
+    var w = document.createElement("div"); w.className = "w"; w.textContent = x.w;
+    li.appendChild(t); li.appendChild(w); pr.appendChild(li);
+  });
+  var dp = $("pDeeper"); dp.innerHTML = "";
+  pa.deeper.forEach(function(x){
+    var li = document.createElement("li"); li.className = "pitem";
+    var ol = document.createElement("ol"); ol.className = "crumbs"; crumbs(ol, x.crumbs);
+    var t = document.createElement("div"); t.className = "t serif"; t.textContent = x.lesson;
+    li.appendChild(ol); li.appendChild(t); dp.appendChild(li);
+  });
+}
+
+function finish(){
+  var sc = score(); result = sc; submitted = false;
+  var r = R[sc.top];
+  $("barFill").style.width = "100%";
+  $("r-h").textContent = r.name;
+  $("rLine").textContent = r.line;
+  $("rRunner").innerHTML = "Runner-up: <b></b>";
+  $("rRunner").querySelector("b").textContent = NAME[sc.runner].name;
+  $("rReading").textContent = r.reading;
+  var ul = $("rShows"); ul.innerHTML = "";
+  r.shows.forEach(function(t){ var li=document.createElement("li"); li.textContent=t; ul.appendChild(li); });
+  $("rAction").textContent = r.action;
+  renderPath(sc.top); renderOfferSum();
+  var rd = $("radar"); rd.innerHTML = radarSVG(sc.counts, sc.top);
+  rd.setAttribute("aria-label", "Pattern chart. " + ORDER.map(function(k){return NAME[k].name+": "+sc.counts[k]+" of "+Q.length}).join(". "));
+  $("formWrap").style.display = ""; $("done").style.display = "none";
+  $("capture").reset(); $("fErr").textContent = "";
+  [].forEach.call(document.querySelectorAll(".inp"), function(e){e.classList.remove("bad")});
+  $("sendBtn").disabled = false;
+  show("result", false);
+}
+
+/* ===== form ===== */
+function waOK(v){ var d=v.replace(/[\s\-().]/g,""); return /^\+?\d{7,15}$/.test(d); }
+function emailOK(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+function setErr(msg, el){ $("fErr").textContent = msg; if(el){ el.classList.add("bad"); el.focus(); } }
+
+$("capture").addEventListener("submit", function(e){
+  e.preventDefault();
+  [].forEach.call(document.querySelectorAll(".inp"), function(x){x.classList.remove("bad")});
+  $("fErr").textContent = "";
+  var name = $("fName").value.trim(), wa = $("fWa").value.trim(), em = $("fEmail").value.trim();
+  if($("fHp").value){ return; }
+  if(!name) return setErr("Please add your name.", $("fName"));
+  if(!wa && !em) return setErr("Please add a WhatsApp number or an email.", $("fWa"));
+  if(wa && !waOK(wa)) return setErr("That WhatsApp number doesn’t look right. Include the country code, for example +971.", $("fWa"));
+  if(em && !emailOK(em)) return setErr("That email doesn’t look right.", $("fEmail"));
+  if(!$("fConsent").checked) return setErr("Please tick the box so we can contact you about your result.", $("fConsent"));
+
+  var contact = [wa, em].filter(Boolean).join(" / ");
+  var payload = {
+    name: name, contact: contact, email: em, whatsapp: wa,
+    patternKey: result.top,
+    pattern: R[result.top].name, runnerUp: R[result.runner].name,
+    answers: picks.map(function(p,qi){ return { q: qi+1, choice: "ABCD".charAt(p), pattern: R[Q[qi].answers[p].k].name }; }),
+    ts: new Date().toISOString()
+  };
+  $("sendBtn").disabled = true; $("sendBtn").textContent = "Sending…";
+  submit(payload).then(function(){ thanks(payload); }).catch(function(){
+    $("sendBtn").disabled = false; $("sendBtn").textContent = "Send me my result and path";
+    setErr("Something went wrong sending that. Please check your connection and try again.");
+  });
+});
+
+function submit(payload){
+  try{
+    var k="beliefAudit.responses", a=JSON.parse(localStorage.getItem(k)||"[]"); a.push(payload); localStorage.setItem(k, JSON.stringify(a));
+  }catch(_){}
+  if(!SUBMIT_ENDPOINT) return Promise.resolve();
+  return fetch(SUBMIT_ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(payload) });
+}
+
+function thanks(payload){
+  submitted = true;
+  $("formWrap").style.display = "none";
+  var d = $("done"); d.style.display = "block";
+  var first = (payload.name||"").split(/\s+/)[0];
+  $("doneH").textContent = first ? "Thank you, " + first + "." : "Thank you.";
+  var viaEmail = !!payload.email;
+  $("doneMsg").textContent = viaEmail
+    ? "We’ll send your result and your path to your email."
+    : "We’ll message you your result.";
+  $("doneResult").innerHTML = "Your result: <b></b>";
+  $("doneResult").querySelector("b").textContent = payload.pattern;
+  crumbs($("doneCrumbs"), DATA.paths[payload.patternKey].start.crumbs.concat([DATA.paths[payload.patternKey].start.lesson.split(", then")[0]]));
+  var app=$("appBtn"), ios=$("iosBtn"), web=$("webBtn"), wab=$("waBtn"), ob=$("offerBtn");
+  if(PLAY_STORE_URL){ app.href = PLAY_STORE_URL; app.hidden = false; } else { app.hidden = true; }
+  if(APP_STORE_URL){ ios.href = APP_STORE_URL; ios.hidden = false; } else { ios.hidden = true; }
+  if(WEB_URL){ web.href = WEB_URL; web.hidden = false; } else { web.hidden = true; }
+  var waDigits = String(WHATSAPP_NUMBER||"").replace(/\D/g,"");
+  if(waDigits && !viaEmail){
+    var txt = "Hi, I just took the Belief Audit. My result is: " + payload.pattern + ". Please send me my result.";
+    wab.href = "https://wa.me/" + waDigits + "?text=" + encodeURIComponent(txt); wab.hidden = false;
+  } else { wab.hidden = true; }
+  if(OFFER_URL){ ob.href = OFFER_URL; ob.hidden = false; } else { ob.hidden = true; }
+  renderPlans();
+  d.focus({preventScroll:true});
+  d.scrollIntoView({block:"start", behavior:"auto"});
+}
+
+/* ===== nav ===== */
+$("startBtn").addEventListener("click", function(){ idx=0; picks=[]; renderQ(false); });
+$("backBtn").addEventListener("click", function(){ if(idx>0){ idx--; renderQ(true); } });
+$("retakeBtn").addEventListener("click", function(){ idx=0; picks=[]; result=null; show("title", true); });
+document.addEventListener("keydown", function(e){
+  if(!screens.quiz.classList.contains("active") || e.metaKey||e.ctrlKey||e.altKey) return;
+  var n = "1234".indexOf(e.key);
+  if(n>-1 && n < Q[idx].answers.length && !/INPUT|TEXTAREA/.test((e.target||{}).tagName||"")){ choose(n); }
+});
+})();
+</script>
+</body>
+</html>
