@@ -272,6 +272,7 @@ footer.foot span{color:var(--text)}
             <label class="f" for="fEmail">Email</label>
             <input class="inp" id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
             <p class="hint">WhatsApp or email, at least one. Email gets your result and your path.</p>
+            <p class="hint" style="margin-top:-8px">🔒 Your answers are used only to send your result and learning path. No spam.</p>
             <div class="hp" aria-hidden="true"><label>Leave empty <input id="fHp" type="text" tabindex="-1" autocomplete="off"></label></div>
             <label class="consent"><input type="checkbox" id="fConsent"><span>I agree to be contacted about my result and RealtorOne.</span></label>
             <div class="err" id="fErr" role="alert"></div>
@@ -315,9 +316,9 @@ footer.foot span{color:var(--text)}
 (function(){
 "use strict";
 /* ===== CONFIG ===== */
-var SUBMIT_ENDPOINT = "";   // Google Apps Script web app URL. Empty = save to localStorage only (preview mode).
+var SUBMIT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzyQVb1Qz8yrgnUC71EXi0QsvtDtdg63dME_RGa7UfYO74yyuaJ7XJ-MCwA_6k9dwy8/exec";   // Google Apps Script web app URL. Empty = save to localStorage only (preview mode).
 var PLAY_STORE_URL  = "https://play.google.com/store/apps/details?id=com.realtorone.app";
-var APP_STORE_URL   = "";   // optional, hidden when empty
+var APP_STORE_URL   = "https://apps.apple.com/in/app/realtorone/id6762615330";   // optional, hidden when empty
 var WEB_URL         = "";   // optional, hidden when empty
 
 /* ===== OFFER (the owner must confirm these before publishing) =====
